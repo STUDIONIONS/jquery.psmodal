@@ -111,6 +111,7 @@ module.exports = function(grunt){
 				},
 				files: {
 					"index.html": ['src/pug/index.pug'],
+					"docs/index.html": ['src/pug/index.pug'],
 				}
 			}
 		},
