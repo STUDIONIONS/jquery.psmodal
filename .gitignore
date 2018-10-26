@@ -1,0 +1,8 @@
+/.idea/**/*
+bower_components/*
+node_modules/*
+test/*
+*.txt
+*.php
+.htaccess
+package-lock.json
