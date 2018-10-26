@@ -69,12 +69,11 @@
 			no: no
 		};
 		this.modal = tpl.clone().attr({
-			id: "psmodal--custom"
+			id: "psmodal--custom--" + (new Date()).getTime()
 		});
 		this.modal.addClass(this.type);
 		$(".psmodal--custom---modal-header--title", this.modal).text(this.title);
 		$(".psmodal--custom---modal-main--content-wrapper", this.modal).append(this.message);
-		console.log(this.callback.yes.text);
 		var okBtn = $("<button></button>", {
 			class: "psmodal--custom-btn ok",
 			text: this.callback.yes.text

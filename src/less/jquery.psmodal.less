@@ -1,0 +1,143 @@
+.psmodal--custom {
+	* {
+		&,
+		&:after,
+		&:before {
+			box-sizing: border-box;
+		}
+	}
+	p {
+		margin-top: 0px;
+		margin-bottom: 12px;
+	}
+	button {
+		cursor: pointer;
+	}
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	&---overlay {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		width: 100%;
+		height: 100%;
+	}
+	&---modal {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		padding: 15px;
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		&---wrapper {
+			padding-left: 15px;
+			padding-right: 15px;
+			max-width: 100%;
+		}
+		&-header {
+			margin-left: -15px;
+			margin-right: -15px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			align-items: flex-start;
+			&--title {
+				display: block;
+				padding-left: 15px;
+				padding-right: 15px;
+				flex: 1;
+			}
+			.psmodal--custom--close {
+				display: block;
+				line-height: 1;
+				margin-right: 15px;
+				cursor: pointer;
+				appearance: none;
+				border: none;
+				padding:0px;
+				svg {
+					display: block;
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
+		&-main {
+			&--content {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: nowrap;
+				align-items: flex-start;
+				padding-top: 20px;
+				padding-bottom: 15px;
+			}
+		}
+	}
+	.psmodal--custom--icon {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	&---modal {
+		&-main {
+			&--btns {
+				display: flex;
+				flex: 1;
+				margin-left: -15px;
+				margin-right: -15px;
+				padding-left: 7.5px;
+				padding-right: 7.5px;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+		}
+	}
+	&-btn {
+		appearance: none;
+		border: 0px;
+		display: inline-block;
+		border-radius: 4px;
+		margin-left: 7.5px;
+		margin-right: 7.5px;
+		justify-content: center;
+		margin-bottom: 15px;
+		padding: 6px 12px;
+		font-size: 14px;
+		min-width: 100px;
+	}
+	/*
+	&.confirm {
+		.psmodal--custom--icon {
+			width: 64px;
+			height: 64px;
+			background-image: url('../images/confirm.png');
+		}
+	}
+	&.prompt {
+		.psmodal--custom--icon {
+			width: 64px;
+			height: 64px;
+			background-image: url('../images/prompt.png');
+		}
+	}
+	*/
+}

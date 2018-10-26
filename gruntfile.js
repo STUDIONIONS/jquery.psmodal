@@ -15,6 +15,12 @@ module.exports = function(grunt){
 				files : {
 					'test/css/main.css' : [
 						'src/less/main.less'
+					],
+					'test/css/theme.css' : [
+						'src/less/theme.less'
+					],
+					'test/css/jquery.psmodal.css' : [
+						'src/less/jquery.psmodal.less'
 					]
 				},
 				options : {
@@ -32,7 +38,9 @@ module.exports = function(grunt){
 				expand: true,
 				flatten: true,
 				src: [
-					'test/css/main.css'
+					'test/css/main.css',
+					'test/css/theme.css',
+					'test/css/jquery.psmodal.css'
 				],
 				dest: 'test/css/main_pref/'//'assets/templates/skat_<%= pkg.version%>/css/'
 			}
@@ -42,6 +50,12 @@ module.exports = function(grunt){
 				files: {
 					'<%= globalConfig.dist%>/css/main.css': [
 						'test/css/main_pref/main.css'
+					],
+					'<%= globalConfig.dist%>/css/theme.css': [
+						'test/css/main_pref/theme.css'
+					],
+					'<%= globalConfig.dist%>/css/jquery.psmodal.css': [
+						'test/css/main_pref/jquery.psmodal.css'
 					]
 				}
 			}
@@ -110,7 +124,6 @@ module.exports = function(grunt){
 					separator:  '\n'
 				},
 				files: {
-					"index.html": ['src/pug/index.pug'],
 					"docs/index.html": ['src/pug/index.pug'],
 				}
 			}
@@ -140,8 +153,9 @@ module.exports = function(grunt){
 				files: [
 					'src/pug/**/*.php',
 					'src/pug/**/*.pug',
+					'src/less/**/*.{css,less}',
 				],
-				tasks: ["pug","notify:done"]
+				tasks: ['notify:watch', 'less', 'autoprefixer','cssmin', "pug","notify:done"]
 			},
 			js: {
 				files: [
@@ -153,12 +167,6 @@ module.exports = function(grunt){
 					'uglify',
 					'notify:done'
 				]
-			},
-			css: {
-				files: [
-					'src/less/**/*.{css,less}',
-				],
-				tasks: ['notify:watch', 'less', 'autoprefixer','cssmin','notify:done']
 			},
 			images: {
 				files: [

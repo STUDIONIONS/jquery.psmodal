@@ -39,7 +39,7 @@ var txt1 = '<p>Кастомное модальное окно</p>\
 				yes: {
 					text: 'УГУ )',
 					callback: function(e){
-						console.log(this);
+						//console.log(this);
 						// Собственный обработчик.
 						// Если вернуть false - окно не закроется;
 						// Если вернуть true  - окно закроется;
@@ -63,7 +63,7 @@ var txt1 = '<p>Кастомное модальное окно</p>\
 				yes: {
 					text: 'Ок',
 					callback: function(e){
-						console.log(this);
+						//console.log(this);
 						return !0;
 					}
 				}

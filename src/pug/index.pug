@@ -4,8 +4,12 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 		meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
 		meta(content="width=device-width, initial-scale=1" name="viewport")
 		title jQuery modal
-		link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet")
-		link(href="assets/css/main.css" rel="stylesheet")
+		style
+			include ../../docs/assets/css/main.css
+		style
+			include ../../docs/assets/css/jquery.psmodal.css
+		style
+			include ../../docs/assets/css/theme.css
 	body
 		div(style="text-align: center;")
 			h1
@@ -17,6 +21,8 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 			br
 			button(role="button" type="button" class="btn2")
 				|OPEN
-		script(src="assets/js/jquery.js")
-		script(src="assets/js/jquery.psmodal.js")
-		script(src="assets/js/main.js")
+		script
+			include yepnope.js
+		script
+			include load.js
+		
