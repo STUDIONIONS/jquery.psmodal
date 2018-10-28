@@ -1,3 +1,42 @@
+@keyframes cssload-rotate-one {
+    0% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0)
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg)
+    }
+}
+@keyframes cssload-rotate-two {
+    0% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0)
+    }
+    100% {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg)
+    }
+}
+@keyframes cssload-rotate-three {
+    0% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0)
+    }
+    100% {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg)
+    }
+}
+@keyframes preloaderhide {
+	0% {
+		display: block;
+		opacity: 1;
+	}
+	99% {
+		display: block;
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+		z-index: -99999;
+		display: none;
+	}
+}
 * {
 	&,
 	&:after,
@@ -21,4 +60,96 @@ body {
 }
 body {
 	font-family: 'Open Sans', sans-serif;
+	background-color: #fff;
+}
+.fontload {
+	position: fixed;
+	left: -400px;
+	top: 0px;
+	span,
+	i,
+	b {
+		display: block;
+	}
+	.fw300 {
+		font-weight: 300;
+	}
+	.fw400 {
+		font-weight: 400;
+	}
+	.fw600 {
+		font-weight: 600;
+	}
+	.fw700 {
+		font-weight: 700;
+	}
+	.fw800 {
+		font-weight: 800;
+	}
+}
+.loader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	width: 100vw;
+	height: 100%;
+	height: 100vh;
+	transition: all .3s ease;
+	z-index: 9999;
+	background-color: #fff;
+	opacity: 1;
+	/*&.load {
+		animation-name: preloaderhide;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+		animation-duration: 1s;
+		animation-delay: 1s;
+	}*/
+	.cssload-loader {
+		position: relative;
+		width: 200px;
+		height: 200px;
+		.cssload-one {
+			animation: cssload-rotate-one 1.15s linear infinite;
+			border-bottom: 15px solid #fff;
+			filter: drop-shadow(0 0 1px #000);
+		}
+		.cssload-two {
+			animation: cssload-rotate-two 1.15s linear infinite;
+			border-right: 15px solid #0039a6;
+		}
+		.cssload-three {
+			animation: cssload-rotate-three 1.15s linear infinite;
+			border-top: 15px solid #d52b1e;
+		}
+		.cssload-inner {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 200px;
+			height: 200px;
+			box-sizing: border-box;
+			border-radius: 50%;
+		}
+	}
+}
+#progress {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0px;
+    width: 1%;
+    height: 7px;
+    background: #428bca;
+    border-radius: 1px;
+    transition: width 500ms ease-out,opacity 400ms linear;
 }

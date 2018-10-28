@@ -153,6 +153,8 @@ module.exports = function(grunt){
 				files: [
 					'src/pug/**/*.php',
 					'src/pug/**/*.pug',
+					'src/pug/**/*.css',
+					'src/pug/**/*.js',
 					'src/less/**/*.{css,less}',
 				],
 				tasks: ['notify:watch', 'less', 'autoprefixer','cssmin', "pug","notify:done"]
